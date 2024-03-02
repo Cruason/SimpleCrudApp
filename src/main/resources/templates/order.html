@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<section id="food-menu">
+<h2 class="food-menu-heading">Your order</h2>
+<div class="food-menu-container container" id="order-list">
+
+</div>
+
+    <section id="contact">
+        <div class="contact-container container">
+            <div class="contact-img">
+                <img src="https://i.postimg.cc/1XvYM67V/restraunt2.jpg" alt="" />
+            </div>
+
+            <div class="form-container">
+                <h2>Confirm Order</h2>
+                <p id="total"></p>
+                <input type="text" placeholder="Your Name" id="name"/>
+                <input type="email" placeholder="E-Mail" id="email"/>
+                <input type="text" placeholder="Your Age" id="age"/>
+                <textarea
+                        id="message"
+                        cols="30"
+                        rows="6"
+                        placeholder="Type Your Message"
+                ></textarea>
+                <a class="btn btn-primary" onclick="{addCustomer(); sendEmail()}">Submit</a>
+            </div>
+        </div>
+    </section>
+
+    <script th:src="@{/js/order.js}">
+
+    </script>
+    <script th:src="@{/js/main.js}"></script>
+</section>
+</body>
+</html>
