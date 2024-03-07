@@ -7,7 +7,7 @@ function loadMenu() {
         cardDish = []
     }
     console.log("loading");
-    fetch("http://localhost:8080/api/v1/menu", {
+    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/menu", {
         method: "GET",
     }).then(response => response.json())
         .then(data => {

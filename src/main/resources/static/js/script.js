@@ -3,7 +3,7 @@ function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch("http://localhost:8080/api/v1/auth/authenticate", {
+    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/auth/authenticate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -30,7 +30,7 @@ function login() {
 
 function accessAdminPage(token) {
     // Assume your admin page URL is "/page/admin", replace it with your actual URL
-    const adminPageUrl = "http://localhost:8080/page/admin";
+    const adminPageUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/page/admin";
 
     // Include the token in the request headers
     const headers = {
@@ -63,7 +63,7 @@ function accessAdminPage(token) {
         });
 }
 
-const menuUrl = "http://localhost:8080/api/v1/menu/secured"
+const menuUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com//api/v1/menu/secured"
 function addDish(token) {
     console.log("hello")
     const nameInput = document.getElementById("dish-name");
@@ -120,7 +120,7 @@ function addDish(token) {
 
 function loadMenuAdmin() {
     console.log("loading");
-    fetch("http://localhost:8080/api/v1/menu", {
+    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/menu", {
         method: "GET",
     }).then(response => response.json())
         .then(data => {
@@ -161,7 +161,7 @@ function deleteDish(dishId) {
     const headers = {
         "Authorization": "Bearer " + token,
     };
-    fetch(`http://localhost:8080/api/v1/menu/secured/${dishId}`, {
+    fetch(`https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/menu/secured/${dishId}`, {
         method: "DELETE",
         headers: headers
     })
@@ -210,7 +210,7 @@ function editDish(dishId) {
                     image: base64Image.toString()
                 };
 
-                fetch(`http://localhost:8080/api/v1/menu/secured/${dishId}`, {
+                fetch(`https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/menu/secured/${dishId}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -230,7 +230,7 @@ function editDish(dishId) {
 
 function loadCustomers(){
     console.log("loading");
-    fetch("http://localhost:8080/api/v1/guests", {
+    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/guests", {
         method: "GET",
     }).then(response => response.json())
         .then(data => {
