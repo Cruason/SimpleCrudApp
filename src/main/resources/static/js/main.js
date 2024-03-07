@@ -71,7 +71,7 @@ function addCustomer() {
         age: ageInput.value,
     };
 
-    fetch("http://localhost:8080/api/v1/guests", {
+    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/guests", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
