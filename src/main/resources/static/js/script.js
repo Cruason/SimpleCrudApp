@@ -63,7 +63,7 @@ function accessAdminPage(token) {
         });
 }
 
-const menuUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com//api/v1/menu/secured"
+const menuUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/menu/secured"
 function addDish(token) {
     console.log("hello")
     const nameInput = document.getElementById("dish-name");
