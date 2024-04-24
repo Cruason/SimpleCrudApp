@@ -26,6 +26,12 @@ public class User implements UserDetails {
     private String lastName;
     private String email;
     private String password;
+    private boolean emailConfirmed;
+
+
+    //Test
+    @Column(name = "confirmation_token")
+    private String confirmationToken;
 
     @Enumerated(EnumType.STRING)
     private Role role;
