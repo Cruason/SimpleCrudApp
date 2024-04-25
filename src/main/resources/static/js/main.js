@@ -1,3 +1,5 @@
+//let webUrl = "http://localhost:8080/"
+let webUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/"
 function loadMenu() {
     let cardDish;
     try
@@ -7,7 +9,7 @@ function loadMenu() {
         cardDish = []
     }
     console.log("loading");
-    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/menu", {
+    fetch(`${webUrl}api/v1/menu`, {
         method: "GET",
     }).then(response => response.json())
         .then(data => {
@@ -71,7 +73,7 @@ function addCustomer() {
         age: ageInput.value,
     };
 
-    fetch("https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/api/v1/guests", {
+    fetch(`${webUrl}api/v1/guests`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

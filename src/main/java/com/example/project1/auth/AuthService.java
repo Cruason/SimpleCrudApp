@@ -79,11 +79,15 @@ public class AuthService {
         user.setConfirmationToken(confirmationToken);
         repository.save(user);
 
+        var jwtToken = jwtService.generateToken(user);
+
         // Send confirmation email
-        String confirmationLink = "http://yourdomain.com/confirm?token=" + confirmationToken;
+        String confirmationLink = "http://localhost:8080/api/confirm?token=" + confirmationToken;
         emailService.sendConfirmationEmail(user.getEmail(), confirmationLink);
 
-        return AuthenticationResponse.builder().message("User registered. Please verify your email.").build();
+        return AuthenticationResponse.builder().message("User registered. Please verify your email.")
+                .token(jwtToken)
+                .build();
     }
 
     public AuthenticationResponse auth(AuthRequest request) {
@@ -94,10 +98,12 @@ public class AuthService {
                 )
         );
         var user = repository.findByEmail(request.getEmail()).orElseThrow();
+
         if (!user.isEmailConfirmed()) {
             throw new RuntimeException("Email not confirmed.");
         }
         var jwtToken = jwtService.generateToken(user);
+
         return AuthenticationResponse.builder().token(jwtToken).build();
     }
 }

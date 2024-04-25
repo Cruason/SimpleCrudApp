@@ -18,6 +18,7 @@ public class EmailServiceImpl implements EmailService {
     @Override
     public void sendConfirmationEmail(String to, String confirmationLink) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setFrom("lagalas10102000@gmail.com");
         mailMessage.setTo(to);
         mailMessage.setSubject("Confirm Your Email");
         mailMessage.setText("Please click the link below to confirm your email:\n\n" + confirmationLink);
