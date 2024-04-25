@@ -81,9 +81,9 @@ public class AuthService {
 
         var jwtToken = jwtService.generateToken(user);
 
-        var webUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/";
+        var webUrl = "https://crud-app-amir-83511e7e7c26.herokuapp.com/";
         // Send confirmation email
-        String confirmationLink = webUrl + "/api/confirm?token=" + confirmationToken;
+        String confirmationLink = webUrl + "api/confirm?token=" + confirmationToken;
         emailService.sendConfirmationEmail(user.getEmail(), confirmationLink);
 
         return AuthenticationResponse.builder().message("User registered. Please verify your email.")

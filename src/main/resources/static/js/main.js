@@ -1,5 +1,5 @@
 //let webUrl = "http://localhost:8080/"
-let webUrl = "https://crud-app-amir-cd8dba7e0a2b.herokuapp.com/"
+let webUrl = "https://crud-app-amir-83511e7e7c26.herokuapp.com/"
 function loadMenu() {
     let cardDish;
     try
